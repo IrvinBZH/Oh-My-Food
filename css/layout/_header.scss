@@ -1,0 +1,33 @@
+@use "../abstracts/" as *;
+
+.logo-content{
+    z-index: $z-index-navbar;
+    position: relative;
+    width: 100%;
+    height: 63px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $color-pure;
+    box-shadow: $box-shadow-s;
+}
+
+.location{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: $z-index-location;
+    position: relative;
+    background-color: $color-canvas-light;
+    box-shadow: $box-shadow-m;
+    &__logo{
+        color: $color-text-medium;
+    }
+    &__title{
+        margin-left: 17px;
+        font-weight: 500;
+        color: $color-text-medium;
+    }
+}

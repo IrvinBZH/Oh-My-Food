@@ -1,0 +1,10 @@
+@use "../abstracts/" as *;
+
+.section {
+    width: 100%;
+    padding: 50px 0;
+}
+
+.pure {
+    background: $color-pure;
+}
