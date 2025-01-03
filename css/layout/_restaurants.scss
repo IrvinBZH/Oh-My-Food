@@ -1,1 +1,55 @@
 @use "../abstracts/" as *;
+
+.view-restaurants{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.thumbnails{
+    background: $color-pure;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 251px;
+    overflow: hidden;
+    position: relative;
+    .link{
+        width: 100%;
+        height: 251px;
+        &__picture{
+            width: 100%;
+            height: 70%;
+            object-fit: cover;
+            object-position: bottom; 
+        }  
+        .thumbnails__picture--top-visible{
+            object-position: 50% 62%;
+        }
+        &__new-restaurant{
+            background: $color-tertiary;
+            color: $color-text-inverted;
+            position: absolute;
+            right: 13px;
+            top: 13px;
+            padding: 5px 10px;
+            border-radius: 2px;
+        }
+        &__title{
+            margin: 12px 0 0 12px;
+        }
+        &__subtitle{
+            margin: 4px 0 0 12px;
+            font-weight: $font-weight-light;
+        }
+    }
+    .link_like-btn{
+        @include heart($font-weight-thin, $color-pure-inverted, $font-size-l, $font-weight-bold);
+        position: absolute;
+        bottom: 32px;
+        right: 24px;
+        display: flex;
+        cursor: pointer;
+    }
+}
