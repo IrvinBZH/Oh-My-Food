@@ -4,11 +4,16 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
+    @include media-min($breakpoint-m) {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 }
 
 .thumbnails{
     background: $color-pure;
-    border-radius: 15px;
+    border-radius: $border-radius-l;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -23,6 +28,9 @@
             height: 70%;
             object-fit: cover;
             object-position: bottom; 
+            @include media-min($breakpoint-xl){
+                object-position: 50% 70%;
+            }
         }  
         .thumbnails__picture--top-visible{
             object-position: 50% 62%;
@@ -34,7 +42,7 @@
             right: 13px;
             top: 13px;
             padding: 5px 10px;
-            border-radius: 2px;
+            border-radius: $border-radius-s;
         }
         &__title{
             margin: 12px 0 0 12px;
@@ -44,7 +52,10 @@
             font-weight: $font-weight-light;
         }
     }
-    .link_like-btn{
+    @include media-min($breakpoint-m) {
+        width: 48%;
+    }
+    .link__like-btn{
         @include heart($font-weight-thin, $color-pure-inverted, $font-size-l, $font-weight-bold);
         position: absolute;
         bottom: 32px;

@@ -1,0 +1,18 @@
+@use "../abstracts/" as *;
+
+section {
+        width: 100%;
+        padding: 50px 0;
+}
+
+#section__selection {
+    background: $color-pure;
+}
+
+#section__explore {
+    padding-top: 40px;
+}
+
+#pure {
+    background: $color-pure;
+}

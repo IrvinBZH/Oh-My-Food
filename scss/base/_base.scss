@@ -1,0 +1,30 @@
+@use "../abstracts/" as *;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $font-secondary;
+  background-color: $color-canvas;
+}
+
+input,
+textarea,
+select,
+button {
+  font-family: inherit;
+  font-size: inherit;
+  padding: 10px;
+  border: 1px solid $color-canvas-inverted;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid $color-selector;
+  border: 1px solid transparent;
+}
+button {
+  cursor: pointer;
+}

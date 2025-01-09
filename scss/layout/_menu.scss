@@ -1,0 +1,130 @@
+@use "../abstracts/" as *;
+
+.restaurant-picture{
+    width: 100%;
+    &__picture{
+        width: 100%;
+        object-fit: cover;
+        object-position: center;
+        &--height{
+            height: 250px;
+        }
+        @include media-min($breakpoint-xl){
+            height: 383px;
+        }
+    }
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    background: $color-pure;
+    margin-top: -50px;
+    .restaurant-menu{
+        display: flex;
+        flex-direction: column;
+        background-color: $color-canvas;
+        border-top-left-radius: 40px;
+        border-top-right-radius: 40px;
+        padding: 30px 0;
+        align-items: center;
+        .order-link {
+            margin-top: 40px;
+            margin-bottom: 10px;
+        }
+        &__title{
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            .title{
+                font-family: $font-primary;
+                font-size: $font-size-xl;
+                font-weight: $font-weight-regular;
+            }
+            .like-btn {
+                margin-left: 32px;
+                @include heart($font-weight-thin, $color-pure-inverted, $font-size-l, $font-weight-bold);
+            }
+        }
+        @include media-min($breakpoint-xl){
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+}
+
+.category{
+    display: flex;
+    flex-direction: column;
+    width: 94%;
+    margin: 30px auto 0 auto;
+    &__title{
+        width: 40px;
+        font-size: $font-size-s;
+        font-weight: $font-weight-light;
+        border-bottom: 3px solid $color-tertiary;
+    }
+    &__item{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        box-shadow: $box-shadow-xl;
+        border-radius: $border-radius-l;
+        background: $color-pure;
+        width: 100%;
+        min-height: 69px;
+        margin-top: 12px;
+        overflow: hidden;
+        cursor: pointer;
+        .content{
+            display: flex;
+            flex-direction: column;
+            padding: 12px 14px;
+            width: 100%;
+            white-space: nowrap; 
+            overflow: hidden; 
+            .name{
+                margin-bottom: 4px;
+                white-space: nowrap; 
+                overflow: hidden; 
+                text-overflow: ellipsis;
+                max-width: calc(100% - 69px);
+                font-size: $font-size-m;
+                font-weight: $font-weight-medium;
+            }
+            p {
+                min-width: 90%;
+                white-space: nowrap; 
+                overflow: hidden; 
+                text-overflow: ellipsis;
+                max-width: calc(100% - 69px);
+                font-size: $font-size-xs;
+                font-weight: $font-weight-light;
+            }
+            .price {
+                text-align: right;
+                margin-top: -18px;
+                font-size: $font-size-xs;
+            }
+        }
+        .checkbox{
+            display: flex;
+                width: 0px;
+                background: $color-tertiary;
+                color: $color-pure;
+                align-items: center;
+                justify-content: center;
+                font-size: $font-size-m;
+                transition: width 200ms ease-in-out;
+        }
+        &:hover > .checkbox {
+            width: 69px;
+            height: 69px;
+            border-radius: 0px 15px 15px 0px;
+        }    
+    }
+    @include media-min($breakpoint-xl){
+        width: 70%;
+    } 
+}
