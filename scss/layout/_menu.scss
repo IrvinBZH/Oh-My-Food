@@ -51,6 +51,11 @@
             width: 70%;
             margin: 0 auto;
         }
+        @for $i from 1 through 3 {
+            .cat-#{$i} {
+                animation: spawn-menu 2s ease-in ($i * 200ms);
+            }
+        }
     }
 }
 
